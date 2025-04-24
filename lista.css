@@ -1,23 +1,109 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lista de Tarefas</title>
-    <link rel="stylesheet" href="css/lista.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head>
-<body>
-    <h1>Lista de Tarefas</h1>
-
-        <header>
-            <input id="inputTarefa" type="text" placeholder="Digite sua tarefa">
-            <button class="add" onclick="addTarefa()">Adicionar</button>
-        </header>
-
-        <main id="areaLista">
-        </main>
-
-        <script src="js/lista.js"></script>
-</body>
-</html>
+* {
+    box-sizing: border-box;
+ }
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f0f4f8;
+}
+h1 {
+    text-align: center;
+    font-size: 3rem;
+}
+header {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    width: 90%;
+    margin: auto auto;
+}
+input {
+    height: 70px;
+    font-size: 2rem;
+    width: 80%;
+    padding-left: 10%;
+}
+button.add {
+    width: 20%;
+    cursor: pointer;
+    background-color: #1e3a8a;
+    color: white;
+    font-weight: bold;
+    border: none;
+    height: 70px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    padding-top: 50px;
+}
+.item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #e0e7ff;
+    height: 80px;
+    width: 80%;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+    border-radius: 10px;
+    margin-bottom: 1%;
+}
+.item.clicado {
+    background: #c7d2fe;
+}
+.item.clicado .item-nome {
+    text-decoration: line-through;
+    color: #6b7280;
+    height: 10px;
+}
+.item-icone {
+    flex: 20%;
+    text-align: center;
+    font-size: 2rem;
+}
+.item-nome {
+    flex: 55%;
+    font-size: 20px;
+    font-weight: bold;
+}
+.item-botao {
+    flex: 25%;
+}
+.delete {
+    background: #7f1d1d;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    height: 80px;
+    width: 100%;
+    border-top-right-radius: 11px;
+    border-bottom-right-radius: 11px;
+}
+.fa-square-check {
+    color: #2563eb;
+}
+footer {
+    display: flex;
+    flex-flow: row-wrap;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    background: #111827;
+    height: 40px;
+    width: 100%;
+}
+footer a {
+    color: #93c5fd;
+}
+footer i {
+    color: #ef4444;
+    font-size: 22px;
+}
